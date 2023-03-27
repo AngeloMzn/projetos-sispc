@@ -1,0 +1,28 @@
+			<h:form id="form-temp">
+				<p:dialog header="Atualização cadastral - Cor/raça" minHeigth="300"
+					style="padding:15px;" width="600" visible="true"
+					rendered="#{loginManagedBean.usuario.pssFisica.pssFsc_Raca == null}"
+					closable="false" closeOnEscape="flase" id="atualização-temporaria"
+					widgetVar="atualizacao-temporaria">
+
+					<h:outputText
+						value="Prezado(a) #{loginManagedBean.usuario.pssFisica.nomeTratamento}, a fim de mantermos atualizadas as informações 
+				    cadastrais com intuito de controle estatístico, solicitamos que informe abaixo sua cor/raça autodeclarada." />
+					
+					<p:spacer width="10" />
+					
+					<p:outputLabel value="Cor/Raça" for="pssfsc_raca" />
+					<h:selectOneMenu id="pssfsc_raca"
+						requiredMessage="Informe a cor/raça da pessoa."
+						value="#{pssFisicaManagedBean.pssFsc_Raca}" >
+						<f:selectItem itemLabel="Branco" itemValue="BRA" />
+						<f:selectItem itemLabel="Preto" itemValue="PRE" />
+						<f:selectItem itemLabel="Amarelo" itemValue="AMA" />
+						<f:selectItem itemLabel="Pardo" itemValue="PAR" />
+						<f:selectItem itemLabel="Indígena" itemValue="IND" />
+					</h:selectOneMenu>
+
+
+				</p:dialog>
+		
+			</h:form>
